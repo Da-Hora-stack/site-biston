@@ -1,0 +1,844 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pulsoo: Energia que vibra com você, design marcante e sabor inesquecível.">
+  <meta name="keywords" content="Pulsoo, bebida energética, energia, performance, inovação">
+  <title>Pulsoo - Energia que Vibra</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Bebas Neue', sans-serif;
+      background-color: #0A0A0A;
+      color: white;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, rgba(20, 20, 20, 0.95), rgba(0, 212, 255, 0.2));
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 0 20px #94D500, 0 0 30px #00D4FF;
+    }
+    
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #94D500;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px #94D500;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #00D4FF;
+      transform: scale(1.1);
+    }
+    
+    .nav-links a.active {
+      color: #00D4FF;
+      border-bottom: 2px solid #00D4FF;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0A0A0A, #1a1a1a, #0A0A0A);
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(148, 213, 0, 0.2), transparent);
+      z-index: 0;
+    }
+    
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 6rem;
+      margin-bottom: 20px;
+      color: #94D500;
+      text-shadow: 0 0 15px #94D500, 0 0 25px #00D4FF;
+      letter-spacing: 3px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      0% { text-shadow: 0 0 15px #94D500, 0 0 25px #00D4FF; }
+      100% { text-shadow: 0 0 25px #94D500, 0 0 35px #00D4FF; }
+    }
+    
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 8rem;
+      }
+    }
+    
+    .hero p {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #94D500, #00D4FF);
+      color: #0A0A0A;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px #94D500, 0 0 30px #00D4FF;
+      animation: pulse-btn 1.5s infinite;
+    }
+    
+    @keyframes pulse-btn {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .btn:hover {
+      background: linear-gradient(45deg, #7EB300, #00A3CC);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 30px #94D500, 0 0 40px #00D4FF;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 120px 0;
+    }
+    
+    section.dark {
+      background: linear-gradient(180deg, #181818, #0A0A0A);
+    }
+    
+    section.light {
+      background: linear-gradient(180deg, #0A0A0A, #181818);
+    }
+    
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #94D500;
+      text-shadow: 0 0 15px #94D500, 0 0 25px #00D4FF;
+      animation: fadeInUp 1s ease;
+    }
+    
+    .section-text {
+      font-size: 1.4rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 50px;
+      line-height: 1.7;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Product Cards */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .product-card {
+      background: linear-gradient(145deg, #1c1c1c, #252525);
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(148, 213, 0, 0.5), 0 0 15px rgba(0, 212, 255, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 0 35px rgba(148, 213, 0, 0.7), 0 0 25px rgba(0, 212, 255, 0.5);
+    }
+    
+    .product-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      margin: 20px 0;
+      color: #00D4FF;
+      text-shadow: 0 0 10px #00D4FF;
+    }
+    
+    .product-card p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    
+    .product-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(148, 213, 0, 0.4);
+    }
+    
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .feature-box {
+      background: linear-gradient(145deg, #1c1c1c, #252525);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(148, 213, 0, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px rgba(148, 213, 0, 0.6), 0 0 20px rgba(0, 212, 255, 0.4);
+    }
+    
+    .feature-box h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #94D500;
+      text-shadow: 0 0 10px #94D500;
+    }
+    
+    .feature-box p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    
+    /* Phase Release Technology */
+    .phase-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .phase {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      background: linear-gradient(145deg, #1c1c1c, #252525);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 20px rgba(148, 213, 0, 0.4);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    
+    .phase:hover {
+      transform: translateY(-5px);
+    }
+    
+    .phase-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #00D4FF;
+      margin-right: 25px;
+      min-width: 70px;
+      text-align: center;
+      text-shadow: 0 0 10px #00D4FF;
+    }
+    
+    .phase-content h3 {
+      color: #94D500;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px #94D500;
+    }
+    
+    .phase-content .extra-info {
+      display: none;
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    
+    .phase.active .extra-info {
+      display: block;
+    }
+    
+    /* Flavor Cards */
+    .flavor-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .flavor-card {
+      background: linear-gradient(145deg, #1c1c1c, #252525);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(148, 213, 0, 0.5), 0 0 15px rgba(0, 212, 255, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    
+    .flavor-card:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 0 35px rgba(148, 213, 0, 0.7), 0 0 25px rgba(0, 212, 255, 0.5);
+    }
+    
+    .flavor-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #00D4FF;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00D4FF;
+    }
+    
+    .flavor-list {
+      text-align: left;
+      margin-top: 25px;
+    }
+    
+    .flavor-list li {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      list-style-type: none;
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    .flavor-list li:before {
+      content: "⚡";
+      position: absolute;
+      left: 0;
+      color: #94D500;
+      font-size: 1.3rem;
+    }
+    
+    /* Packaging Section */
+    .packaging-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .packaging-feature {
+      background: linear-gradient(145deg, #1c1c1c, #252525);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(148, 213, 0, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .packaging-feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(148, 213, 0, 0.6), 0 0 20px rgba(0, 212, 255, 0.4);
+    }
+    
+    .packaging-feature h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #94D500;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #94D500;
+    }
+    
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background: linear-gradient(145deg, #1c1c1c, #252525);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 0 30px rgba(148, 213, 0, 0.6);
+      position: relative;
+    }
+    
+    .modal-content h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00D4FF;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00D4FF;
+    }
+    
+    .modal-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .modal-content input, .modal-content select {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: #2a2a2a;
+      color: white;
+      font-size: 1rem;
+    }
+    
+    .modal-content button {
+      background: linear-gradient(45deg, #94D500, #00D4FF);
+      color: #0A0A0A;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .modal-content button:hover {
+      background: linear-gradient(45deg, #7EB300, #00A3CC);
+      transform: scale(1.05);
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: #94D500;
+      cursor: pointer;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, #181818, #0A0A0A);
+      padding: 50px 0;
+      text-align: center;
+    }
+    
+    .footer-text {
+      font-size: 1.4rem;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    
+    .footer-highlight {
+      color: #00D4FF;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      text-shadow: 0 0 10px #00D4FF;
+    }
+    
+    /* Floating Button */
+    .floating-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background: linear-gradient(45deg, #94D500, #00D4FF);
+      color: #0A0A0A;
+      padding: 20px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: bold;
+      box-shadow: 0 0 25px #94D500, 0 0 35px #00D4FF;
+      z-index: 100;
+      animation: pulse-btn 1.5s infinite;
+    }
+    
+    .floating-btn:hover {
+      background: linear-gradient(45deg, #7EB300, #00A3CC);
+      transform: scale(1.1);
+      box-shadow: 0 0 35px #94D500, 0 0 45px #00D4FF;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <h1 class="logo">PULSOO</h1>
+      <div class="nav-links">
+        <a href="#home">INÍCIO</a>
+        <a href="#sobre">SOBRE</a>
+        <a href="#tecnologia">TECNOLOGIA</a>
+        <a href="#sabores">SABORES</a>
+        <a href="#embalagem">EMBALAGEM</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: 0;"></div>
+    <div class="container">
+      <h1>PULSOO: ENERGIA QUE VIBRA</h1>
+      <p>A energia não tem limites, e nosso design também não. Uma revolução energética para impulsionar seu desempenho.</p>
+      <a href="#sabores" class="btn">CONHEÇA NOSSOS SABORES</a>
+    </div>
+  </section>
+
+  <!-- Sobre Section -->
+  <section id="sobre" class="dark">
+    <div class="container fade-in">
+      <h2 class="section-title">O QUE É O PULSOO?</h2>
+      <p class="section-text">PULSOO é a revolução das bebidas energéticas: uma fórmula que une desempenho e design marcante. Desenvolvido com especialistas em nutrição esportiva, oferece energia limpa e duradoura em uma embalagem que expressa sua intensidade.</p>
+      <img src="https://source.unsplash.com/800x400/?energy-drink" alt="Produto Pulsoo" style="max-width: 100%; border-radius: 20px; margin: 0 auto; display: block; box-shadow: 0 0 30px rgba(148, 213, 0, 0.6), 0 0 20px rgba(0, 212, 255, 0.4);">
+      <p class="section-text" style="color: #00D4FF; font-weight: bold; margin-top: 40px;">ENERGIA PARA VOCÊ, POTÊNCIA PARA SEU DIA!</p>
+    </div>
+  </section>
+
+  <!-- Tecnologia Section -->
+  <section id="tecnologia" class="light">
+    <div class="container fade-in">
+      <h2 class="section-title">TECNOLOGIA DE LIBERAÇÃO EM FASES</h2>
+      <p class="section-text">Sistema exclusivo que fornece energia inteligente quando você mais precisa</p>
+      
+      <div class="phase-container">
+        <div class="phase">
+          <div class="phase-number">1</div>
+          <div class="phase-content">
+            <h3>Liberação Rápida</h3>
+            <p>Cafeína natural de alta biodisponibilidade para efeito energético imediato em 15-20 minutos</p>
+            <p class="extra-info">A cafeína é extraída de fontes naturais como guaraná, proporcionando um impulso rápido sem picos de açúcar.</p>
+          </div>
+        </div>
+        
+        <div class="phase">
+          <div class="phase-number">2</div>
+          <div class="phase-content">
+            <h3>Energia Sustentada</h3>
+            <p>Compounds de liberação lenta (teanina, vitaminas B complex) mantêm seu desempenho por horas</p>
+            <p class="extra-info">A teanina promove foco, enquanto as vitaminas B ajudam na conversão eficiente de energia.</p>
+          </div>
+        </div>
+        
+        <div class="phase">
+          <div class="phase-number">3</div>
+          <div class="phase-content">
+            <h3>Prevenção de Queda</h3>
+            <p>Adaptógenos exclusivos que regulam seu metabolismo e previnem o crash energético</p>
+            <p class="extra-info">Ingredientes como ashwagandha estabilizam os níveis de energia, mantendo você ativo por mais tempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sabores Section -->
+  <section id="sabores" class="dark">
+    <div class="container fade-in">
+      <h2 class="section-title">NOSSOS SABORES</h2>
+      <p class="section-text">Combinações exclusivas para diferentes momentos e necessidades</p>
+      
+      <div class="flavor-cards">
+        <div class="flavor-card" data-flavor="foco">
+          <h3>PULSO FOCO</h3>
+          <p>Para concentração mental e clareza cognitiva</p>
+          <ul class="flavor-list">
+            <li>Menta Azul com Blueberry</li>
+            <li>Matcha Intenso</li>
+            <li>Morango</li>
+          </ul>
+        </div>
+        
+        <div class="flavor-card" data-flavor="atleta">
+          <h3>PULSO ATLETA</h3>
+          <p>Para performance física e recuperação</p>
+          <ul class="flavor-list">
+            <li>Coco Tropical com Pitaya</li>
+            <li>Frutas Vermelhas com Açaí</li>
+            <li>Melancia</li>
+          </ul>
+        </div>
+        
+        <div class="flavor-card" data-flavor="zen">
+          <h3>PULSO ZEN</h3>
+          <p>Para energia balanceada e relaxamento</p>
+          <ul class="flavor-list">
+            <li>Maçã Verde e Hortelã</li>
+            <li>Cacau e Pimenta Rosa</li>
+            <li>Mel e Cereja</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embalagem Section -->
+  <section id="embalagem" class="light">
+    <div class="container fade-in">
+      <h2 class="section-title">EMBALAGEM INOVADORA</h2>
+      <p class="section-text">Tecnologia que vai além da bebida</p>
+      
+      <div class="packaging-features">
+        <div class="packaging-feature">
+          <h3>Bioplástico Inteligente</h3>
+          <p>Feito de fontes renováveis, nossa embalagem muda de cor gradualmente conforme se aproxima da data de validade, garantindo frescor e segurança.</p>
+        </div>
+        
+        <div class="packaging-feature">
+          <h3>Design Ergonômico</h3>
+          <p>Formato exclusivo que se adapta à sua mão durante atividades físicas, com superfície antiderrapante mesmo em condições úmidas.</p>
+        </div>
+        
+        <div class="packaging-feature">
+          <h3>Sistema de Vedação</h3>
+          <p>Permite reabertura sem vazamentos, ideal para consumo em movimento, com indicador de integridade da vedação.</p>
+        </div>
+      </div>
+      
+      <img src="https://source.unsplash.com/800x400/?smart-packaging" alt="Embalagem inteligente Pulsoo" style="max-width: 100%; border-radius: 20px; margin: 50px auto 0; display: block; box-shadow: 0 0 30px rgba(148, 213, 0, 0.6);">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">© 2025 PULSOO. ENERGIA QUE VIBRA.</p>
+      <p class="footer-highlight">FEITO COM ⚡ E ATITUDE.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Button -->
+  <a href="#comprar" class="floating-btn" id="buy-now">COMPRE AGORA</a>
+
+  <!-- Modal for Purchase -->
+  <div class="modal" id="purchase-modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-purchase">&times;</span>
+      <h2>COMPRE SEU PULSOO</h2>
+      <p>Preencha os dados para simular sua compra!</p>
+      <form id="purchase-form">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="E-mail" required>
+        <select required>
+          <option value="" disabled selected>Escolha um sabor</option>
+          <option value="foco">Pulso Foco</option>
+          <option value="atleta">Pulso Atleta</option>
+          <option value="zen">Pulso Zen</option>
+        </select>
+        <button type="submit">ENVIAR PEDIDO</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal for Flavor Details -->
+  <div class="modal" id="flavor-modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-flavor">&times;</span>
+      <h2 id="flavor-title"></h2>
+      <p id="flavor-description"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Particles.js Configuration
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: ['#94D500', '#00D4FF'] },
+        shape: { type: 'circle', stroke: { width: 0 } },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: '#94D500', opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: 'none', random: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+
+    // Smooth Scroll and Active Link Highlight
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Fade-in Animation
+    const fadeElements = document.querySelectorAll('.fade-in');
+    function checkFade() {
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkFade);
+    window.addEventListener('load', checkFade);
+
+    // Phase Expand/Collapse
+    document.querySelectorAll('.phase').forEach(phase => {
+      phase.addEventListener('click', () => {
+        phase.classList.toggle('active');
+      });
+    });
+
+    // Flavor Modal
+    const flavorModal = document.getElementById('flavor-modal');
+    const flavorTitle = document.getElementById('flavor-title');
+    const flavorDescription = document.getElementById('flavor-description');
+    const closeFlavor = document.getElementById('close-flavor');
+
+    document.querySelectorAll('.flavor-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const flavor = card.getAttribute('data-flavor');
+        let description = '';
+        if (flavor === 'foco') {
+          flavorTitle.textContent = 'Pulso Foco';
+          description = 'Desenvolvido para maximizar a concentração mental, Pulso Foco combina sabores refrescantes como Menta Azul com Blueberry, Matcha Intenso e Morango, ideais para estudar ou trabalhar com foco total.';
+        } else if (flavor === 'atleta') {
+          flavorTitle.textContent = 'Pulso Atleta';
+          description = 'Perfeito para treinos intensos, Pulso Atleta oferece sabores energizantes como Coco Tropical com Pitaya, Frutas Vermelhas com Açaí e Melancia, promovendo desempenho e recuperação.';
+        } else if (flavor === 'zen') {
+          flavorTitle.textContent = 'Pulso Zen';
+          description = 'Para momentos de equilíbrio, Pulso Zen traz sabores calmantes como Maçã Verde e Hortelã, Cacau e Pimenta Rosa, e Mel e Cereja, proporcionando energia sem estresse.';
+        }
+        flavorDescription.textContent = description;
+        flavorModal.style.display = 'flex';
+      });
+    });
+
+    closeFlavor.addEventListener('click', () => {
+      flavorModal.style.display = 'none';
+    });
+
+    // Purchase Modal
+    const purchaseModal = document.getElementById('purchase-modal');
+    const buyNowBtn = document.getElementById('buy-now');
+    const closePurchase = document.getElementById('close-purchase');
+    const purchaseForm = document.getElementById('purchase-form');
+
+    buyNowBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      purchaseModal.style.display = 'flex';
+    });
+
+    closePurchase.addEventListener('click', () => {
+      purchaseModal.style.display = 'none';
+    });
+
+    purchaseForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Pedido enviado com sucesso! (Simulação)');
+      purchaseModal.style.display = 'none';
+      purchaseForm.reset();
+    });
+
+    // Close modals when clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === purchaseModal) {
+        purchaseModal.style.display = 'none';
+      }
+      if (e.target === flavorModal) {
+        flavorModal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
+```
